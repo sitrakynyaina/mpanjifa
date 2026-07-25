@@ -1,0 +1,33 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Base.Theme.ClientApp" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <!-- Couleurs principales -->
+        <item name="colorPrimary">@color/accent_coral_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Fond -->
+        <item name="android:colorBackground">@color/dark_background</item>
+        <item name="colorSurface">@color/dark_surface</item>
+        <item name="colorOnSurface">@color/white</item>
+
+        <!-- Barre de statut -->
+        <item name="android:statusBarColor">@color/dark_background</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        <!-- Navigation -->
+        <item name="android:navigationBarColor">@color/dark_background</item>
+    </style>
+
+    <style name="Theme.ClientApp" parent="Base.Theme.ClientApp"/>
+
+    <!-- Style réutilisable pour les cartes -->
+    <style name="ModernCardStyle">
+        <item name="cardBackgroundColor">@color/dark_card_background</item>
+        <item name="cardCornerRadius">@dimen/card_corner_radius</item>
+        <item name="cardElevation">@dimen/card_elevation</item>
+        <item name="cardMaxElevation">4dp</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+
+</resources>

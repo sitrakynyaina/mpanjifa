@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Palette tirée de la référence visuelle -->
+    <color name="mint_background">#EBF6F0</color>
+    <color name="mint_header">#C8E6C9</color>
+    <color name="card_background">#FFFFFF</color>
+
+    <!-- Couleurs de texte et d'accentuation -->
+    <color name="text_primary">#1D2338</color>
+    <color name="text_secondary">#78849E</color>
+    <color name="accent_coral">#FF5252</color>
+    <color name="accent_coral_pressed">#D32F2F</color>
+
+    <!-- Neutres -->
+    <color name="stroke_color">#E0E0E0</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <!-- dark mode -->
+    <color name="accent_coral_dark">#FF8A65</color>
+    <color name="dark_background">#121212</color>
+    <color name="dark_surface">#1E1E1E</color>
+    <color name="dark_card_background">#242424</color>
+
+
+</resources>
