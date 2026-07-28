@@ -53,18 +53,22 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientView
     static class ClientViewHolder extends  RecyclerView.ViewHolder {
         private final TextView tvId;
         private final TextView tvName;
+        private final TextView tvBirthdate;
         private final ImageView ivPhoto;
 
         public ClientViewHolder(@NonNull View itemView) {
             super(itemView);
             tvId = itemView.findViewById(R.id.tvClientId);
             tvName = itemView.findViewById(R.id.tvClientName);
+            tvBirthdate = itemView.findViewById(R.id.tvClientBirthdate);
             ivPhoto = itemView.findViewById(R.id.ivClientPhoto);
         }
 
         public void bind(final Client client, final OnClientClickListener listener) {
             tvId.setText("Id : " + client.getIdcli());
             tvName.setText(client.getNom());
+            String birthdate = client.getDateNaissance().toString();
+            tvBirthdate.setText((birthdate != null && !birthdate.isEmpty()) ? birthdate : "Non renseignée");
 
             Glide.with(itemView.getContext())
                     .load(client.getPhoto())

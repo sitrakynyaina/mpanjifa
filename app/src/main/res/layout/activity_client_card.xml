@@ -3,19 +3,25 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/ModernCardStyle"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="@dimen/margin_medium"
     android:layout_marginTop="6dp"
-    android:layout_marginBottom="6dp">
+    android:layout_marginBottom="6dp"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardBackgroundColor="@color/card_background"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="2dp"
+    app:strokeColor="@color/stroke_color"
+    app:strokeWidth="1dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/margin_medium">
 
-        <!-- Photo du client (Rond parfait) -->
+        <!-- Photo du client (Rond géré proprement) -->
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/ivClientPhoto"
             android:layout_width="@dimen/avatar_size"
@@ -24,38 +30,58 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
             tools:src="@tools:sample/avatars" />
 
-
-        <!-- Label & Identifiant (ex: ID : CL001) -->
-        <TextView
-            android:id="@+id/tvClientId"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_medium"
-            android:textColor="@color/accent_coral"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/ivClientPhoto"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="ID : CL001" />
-
-        <!-- Nom du client -->
+        <!-- Nom du client (En haut, mis en valeur) -->
         <TextView
             android:id="@+id/tvClientName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_medium"
-            android:layout_marginTop="2dp"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:ellipsize="end"
+            android:maxLines="1"
             android:textColor="@color/text_primary"
             android:textSize="16sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/tvClientId"
+            app:layout_constraintStart_toEndOf="@+id/ivClientPhoto"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Rakoto Jean" />
+
+        <!-- Date de naissance avec petite icône calendrier -->
+        <TextView
+            android:id="@+id/tvClientBirthdate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginTop="4dp"
+            android:drawablePadding="6dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp"
+            app:drawableStartCompat="@android:drawable/ic_menu_my_calendar"
+            app:drawableTint="@color/text_secondary"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivClientPhoto"
-            app:layout_constraintTop_toBottomOf="@+id/tvClientId"
-            tools:text="Rakoto Jean" />
+            app:layout_constraintTop_toBottomOf="@+id/tvClientName"
+            tools:text="15/03/1995" />
+
+        <!-- Badge ID (Pilule en haut à droite) -->
+        <TextView
+            android:id="@+id/tvClientId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/mint_background"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="3dp"
+            android:textColor="@color/accent_coral"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="ID: CL001" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>
